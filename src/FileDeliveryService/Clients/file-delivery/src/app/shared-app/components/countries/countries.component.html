@@ -1,0 +1,6 @@
+Choose country to check packet avaliability
+<select (change)="onChange($event.target.value)">
+  <option *ngFor="let country of countries" value="{{ country.Code }}">
+    {{ country.Name }}
+  </option>
+</select>

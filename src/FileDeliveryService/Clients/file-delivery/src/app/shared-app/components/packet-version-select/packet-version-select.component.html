@@ -1,0 +1,9 @@
+{{ packetVersionText }}
+<select (change)="onChange($event.target.value)">
+  <option
+    *ngFor="let country of packetVersions"
+    value="{{ country.versionNumber }}"
+  >
+    {{ country.versionCode }}
+  </option>
+</select>

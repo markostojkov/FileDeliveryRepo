@@ -1,0 +1,17 @@
+<h1>Packets!!</h1>
+
+<table *ngIf="!working">
+  <tr>
+    <th>Packet</th>
+    <th></th>
+  </tr>
+  <tbody>
+    <tr
+      *ngFor="let packet of packets.paginatedPackets"
+      (click)="routeToPacketDetail(packet.uid)"
+    >
+      <td>{{ packet.name }}</td>
+      <img class="packet-image" src="{{ packet.logoUrl }}" />
+    </tr>
+  </tbody>
+</table>

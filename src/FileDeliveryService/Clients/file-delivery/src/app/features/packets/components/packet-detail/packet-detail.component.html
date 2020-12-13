@@ -1,0 +1,24 @@
+<div *ngIf="!working">
+  <h1>{{ packet.name }}</h1>
+  <img class="packet-image" src="{{ packet.logoUrl }}" />
+  <app-countries
+    class="display-block"
+    (countryChanged)="countryIsChanged($event)"
+  ></app-countries>
+  <app-packet-version-select
+    class="display-block"
+    [packetVersionText]="'Choose current version'"
+    [packetVersions]="packet.versionDetails"
+    (packetChanged)="currentVersionIsChanged($event)"
+  ></app-packet-version-select>
+  <app-packet-version-select
+    class="display-block"
+    [packetVersionText]="'Choose version you want to update to'"
+    [packetVersions]="packet.versionDetails"
+    (packetChanged)="newVersionIsChanged($event)"
+  ></app-packet-version-select>
+
+  <button class="display-block" (click)="checkForUpdate()">
+    Check for update
+  </button>
+</div>
